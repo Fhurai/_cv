@@ -1,0 +1,1 @@
+npx lessc assets/css/less/app.less assets/css/app.css && npx lessc --clean-css assets/css/less/app.less assets/css/app.min.css

@@ -1,0 +1,31 @@
+/* loading styling */
+.loading{
+  display: none;
+  padding: 50px;
+  text-align: center;
+  z-index: 5;
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 45px);
+}
+
+/* loading loading state */
+.loading.load {
+  display: block;
+}
+
+/* loading loading animation */
+.loading.load:before {
+  content: "";
+  height: 90px;
+  width: 90px;
+  margin: -15px auto auto -15px;
+  position: absolute;
+  top: calc(50% - 45px);
+  left: calc(50% - 45px);
+  border-width: 8px;
+  border-style: solid;
+  border-color: #5f5f5f #000000 #000000;
+  border-radius: 100%;
+  animation: rotation 0.7s infinite linear;
+}
