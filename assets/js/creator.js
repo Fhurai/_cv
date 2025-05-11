@@ -48,6 +48,16 @@ class Creator {
     });
 
     root.appendChild(loading);
+
+    const backdrop = Creator.createElement(
+      'div',
+      {
+        className: 'backdrop',
+        id: 'backdrop'
+      }
+    );
+
+    root.appendChild(backdrop);
   }
 
   static createNavbar(root) {
@@ -323,7 +333,7 @@ class Creator {
         className: "card skills",
         id: "skills1",
       },
-      "Languages"
+      "Langages"
     );
 
     const content1 = Creator.createElement("div", {
@@ -469,12 +479,12 @@ class Creator {
       id: "bodySkills6",
     });
     content6.innerHTML += `<ul role='methods items'>
-      <li role='methods item'>UML - conception basée sur les classes</li>
-      <li role='methods item'>Merise - conception basée sur les tables de la BDD</li>
+      <li role='methods item'>UML - Conception basée sur les classes</li>
+      <li role='methods item'>Merise - Conception basée sur les tables de la BDD</li>
     </ul>`;
     content6.innerHTML += `<hr>`;
     content6.innerHTML += `<ul role='agile items'>
-      <li role='agile item'>Agile - Multiple méthode de gestion de projets</li>
+      <li role='agile item'>Agile - Multiple méthodes de gestion de projets</li>
       <li role='agile item'>Scrum - Méthode de gestion de projets</li>
     </ul>`;
     content6.innerHTML += `<hr>`;

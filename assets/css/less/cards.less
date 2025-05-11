@@ -6,7 +6,6 @@
   justify-content: space-evenly;
 
   .card {
-    display: block;
     background-color: var(--color-darkgrey);
     border-radius: 0.5rem;
     padding: 0.5rem;
@@ -14,6 +13,12 @@
     width: 15rem;
     box-shadow: 0.5rem 0.5rem 0.5rem black;
     font-size: larger;
+
+    display: none;
+
+    &.visible {
+      display: block;
+    }
 
     .body {
       border-top: 1px solid var(--color-black);
@@ -24,7 +29,7 @@
       text-align: center;
 
       div:not(.imgContainer) {
-        text-align: justify;
+        text-align: left;
       }
 
       hr {

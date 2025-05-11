@@ -51,6 +51,20 @@ body {
   border-radius: 100%;
   animation: rotation 0.7s infinite linear;
 }
+.backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  /* semi-transparent black */
+  z-index: 10;
+}
+.backdrop.show {
+  display: block;
+}
 nav {
   background-color: var(--color-darkgrey);
   border-radius: 0 0 0.5rem 0.5rem;
@@ -60,6 +74,7 @@ nav {
   box-shadow: 0.5rem 0.5rem 0.5rem black;
   justify-content: space-between;
   padding: 0.5rem;
+  z-index: 15;
 }
 nav h1 {
   margin: 0;
@@ -126,6 +141,7 @@ nav ul li:hover {
     border-width: 0 2px 2px 0;
     box-shadow: 0.5rem 0.5rem 0.5rem black;
     width: 90%;
+    z-index: 15;
   }
   nav ul li {
     width: 100%;
@@ -148,7 +164,6 @@ nav ul li:hover {
   justify-content: space-evenly;
 }
 .cards .card {
-  display: block;
   background-color: var(--color-darkgrey);
   border-radius: 0.5rem;
   padding: 0.5rem;
@@ -156,6 +171,10 @@ nav ul li:hover {
   width: 15rem;
   box-shadow: 0.5rem 0.5rem 0.5rem black;
   font-size: larger;
+  display: none;
+}
+.cards .card.visible {
+  display: block;
 }
 .cards .card .body {
   border-top: 1px solid var(--color-black);
@@ -166,7 +185,7 @@ nav ul li:hover {
   text-align: center;
 }
 .cards .card .body div:not(.imgContainer) {
-  text-align: justify;
+  text-align: left;
 }
 .cards .card .body hr {
   border: unset;
