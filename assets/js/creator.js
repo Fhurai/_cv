@@ -48,16 +48,6 @@ class Creator {
     });
 
     root.appendChild(loading);
-
-    const backdrop = Creator.createElement(
-      'div',
-      {
-        className: 'backdrop',
-        id: 'backdrop'
-      }
-    );
-
-    root.appendChild(backdrop);
   }
 
   static createNavbar(root) {
@@ -358,9 +348,6 @@ class Creator {
       className: "body",
       id: "bodySkills2",
     });
-    content2.innerHTML += `<div></div>`;
-    content2.innerHTML += `<div></div>`;
-
     content2.innerHTML += `<ul role='desktop items'>
       <li role='desktop item'>Swing - Interface graphique</li>
       <li role='desktop item'>Junit - Tests Unitaires</li>

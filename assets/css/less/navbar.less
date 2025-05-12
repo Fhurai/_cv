@@ -44,10 +44,6 @@ nav {
     }
   }
 
-  input:checked ~ ul {
-    visibility: visible;
-  }
-
   ul {
     list-style: none;
     display: inline-flex;
@@ -74,16 +70,19 @@ nav {
       display: flex;
     }
 
+    input:checked ~ ul {
+      max-height: 100vh;
+      transition: max-height 2s ease;
+    }
+
     ul {
-      visibility: hidden;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 1s ease;
       flex-direction: column;
       position: absolute;
-      background-color: transparent;
+      background-color: var(--color-black);
       top: 100%;
-      border-radius: 0 0 0.5rem 0;
-      border-style: solid;
-      border-color: var(--color-black);
-      border-width: 0 2px 2px 0;
       box-shadow: 0.5rem 0.5rem 0.5rem black;
       width: 90%;
       z-index: 15;
@@ -92,8 +91,6 @@ nav {
         width: 100%;
         border: 1px solid var(--color-black);
         background-color: var(--color-darkgrey);
-        padding-top: unset;
-        padding: 0.5rem;
         font-size: 18px;
 
         &:hover {

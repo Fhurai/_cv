@@ -9,23 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
   Creator.createCards(document.getElementById("content"));
 
   clickCards();
-  showBackDrop();
   showCards();
   document.getElementById("loading").classList.toggle("load");
 });
-
-function showBackDrop() {
-  document
-    .querySelector("#labelBtnNavbar")
-    .addEventListener("click", function () {
-      document.querySelector("div.backdrop").classList.add("show");
-    });
-
-  document.querySelector("div.backdrop").addEventListener("click", () => {
-    document.querySelector("#btnNavbar").checked = false;
-    document.querySelector("div.backdrop").classList.remove("show");
-  });
-}
 
 function clickCards() {
   const buttons = Array.from(document.querySelectorAll("nav ul li"));
@@ -34,7 +20,6 @@ function clickCards() {
     btn.addEventListener("click", function (event) {
       cardType = event.currentTarget.dataset.class;
       document.querySelector("input").checked = false;
-      document.querySelector("div.backdrop").classList.remove("show");
       showCards();
 
       setTimeout(scrollToTopOfCardsWithOffset, 10);
