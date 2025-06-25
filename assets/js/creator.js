@@ -178,7 +178,7 @@ class Creator {
     content1.innerHTML += `<div class='imgLogo'><img src='./assets/pics/efluid_logo.png'></div>`;
     content1.innerHTML += `<div role='titre'>Développeur JAVA</div>`;
     content1.innerHTML += `<hr/>`;
-    content1.innerHTML += `<div role='periode'>01/2017 (Début intérim) <br/>06/2018 (Fin intérim)</div>`;
+    content1.innerHTML += `<div role='periode'>Janvier 2017 (Début intérim) <br/>Juin 2018 (Fin intérim)</div>`;
     content1.innerHTML += `<hr/>`;
     content1.innerHTML += `<ul role='missions'>
       <li role='mission'>Développement & mise en place du système d'intégration métier en Java.</li>
@@ -201,7 +201,7 @@ class Creator {
     content2.innerHTML += `<div class='imgLogo'><img src='./assets/pics/cac_histo.png'></div>`;
     content2.innerHTML += `<div role='titre'>Technicien informatique</div>`;
     content2.innerHTML += `<hr/>`;
-    content2.innerHTML += `<div role='periode'>08/2018 (Début CDI) <br/>11/2019 (Fin CDI)</div>`;
+    content2.innerHTML += `<div role='periode'>Août 2018 (Début CDI) <br/>Novembre 2019 (Fin CDI)</div>`;
     content2.innerHTML += `<hr/>`;
     content2.innerHTML += `<ul role='missions'>
       <li role='mission'>Développement et maintien de la solution de gestion commerciale en Pascal Delphi.</li>
@@ -224,7 +224,7 @@ class Creator {
     content3.innerHTML += `<div class='imgLogo'><img src='./assets/pics/happiso_logo.jpg'></div>`;
     content3.innerHTML += `<div role='titre'>Développeur Php</div>`;
     content3.innerHTML += `<hr/>`;
-    content3.innerHTML += `<div role='periode'>01/2020 (Début intérim) <br/>05/2020 (Fin intérim/Début CDI) <br/>01/2023 (Fin CDI)</div>`;
+    content3.innerHTML += `<div role='periode'>Janvier 2020 (Début intérim) <br/>Mai 2020 (Fin intérim/Début CDI) <br/>Janvier 2023 (Fin CDI)</div>`;
     content3.innerHTML += `<hr/>`;
     content3.innerHTML += `<ul role='missions'>
       <li role='mission'>Développement & maintien d'une solution de gestion RH en Cakephp, Javascript & Less.</li>
@@ -260,7 +260,7 @@ class Creator {
     content1.innerHTML += `<hr>`;
     content1.innerHTML += `<div role='events'>Quatre semestres avec de nombreux projets informatiques et non informatiques</div>`;
     content1.innerHTML += `<hr>`;
-    content1.innerHTML += `<div role='internship'>Stage du 04/2013 au 06/2013 chez Sira Multiservices (57050)</div>`;
+    content1.innerHTML += `<div role='internship'>Stage d'Avril 2013 à Juin 2013 chez Sira Multiservices (57050)</div>`;
     card1.appendChild(content1);
 
     const card2 = Creator.createElement(
@@ -284,7 +284,7 @@ class Creator {
     content2.innerHTML += `<hr>`;
     content2.innerHTML += `<div role='events'>Deux semestres avec de nombreux projets informatiques</div>`;
     content2.innerHTML += `<hr>`;
-    content2.innerHTML += `<div role='internship'>Stage du 05/2015 au 09/2015 chez OGMI (54000)</div>`;
+    content2.innerHTML += `<div role='internship'>Stage de Mai 2015 à Septembre 2015 chez OGMI (54000)</div>`;
     card2.appendChild(content2);
 
     const card3 = Creator.createElement(
@@ -308,7 +308,7 @@ class Creator {
     content3.innerHTML += `<hr>`;
     content3.innerHTML += `<div role='events'>Huit mois avec septs évaluations en cours de formation (ECF)</div>`;
     content3.innerHTML += `<hr>`;
-    content3.innerHTML += `<div role='internship'>Stage du 05/2025 au 07/2025 chez Profluens SAS</div>`;
+    content3.innerHTML += `<div role='internship'>Stage de Mai 2025 à Juillet 2025 chez Profluens SAS</div>`;
     card3.appendChild(content3);
 
     root.appendChild(card3);
