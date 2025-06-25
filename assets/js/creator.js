@@ -334,7 +334,7 @@ class Creator {
       className: "body",
       id: "bodyPro6",
     });
-    content6.innerHTML += `<div class='imgLogo'><img src='./assets/pics/profluens.jpg'></div>`;
+    content6.innerHTML += `<div class='imgLogo'><img src='./assets/pics/Profluens.jpg'></div>`;
     content6.innerHTML += `<div role='titre'>Développeur Web</div>`;
     content6.innerHTML += `<hr/>`;
     content6.innerHTML += `<div role='periode'>Mai 2025 (Début stage) - Juillet 2025 (Fin stage)</div>`;
