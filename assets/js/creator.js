@@ -1,3 +1,8 @@
+/**
+ * Creator class provides static methods to generate and append various DOM elements
+ * for a Curriculum Vitae (CV) web application, including cards for identity, professional
+ * experiences, education, skills, and projects.
+ */
 class Creator {
   /**
    * Create a new DOM element with optional attributes and children.
@@ -8,22 +13,28 @@ class Creator {
    * @returns {HTMLElement} The created DOM element.
    */
   static createElement(tag, attributes = {}, children = []) {
+    // Create the element with the given tag
     const el = document.createElement(tag);
 
+    // Set attributes, handling special cases for className and dataset
     for (const [key, value] of Object.entries(attributes)) {
       if (key === "className") {
         el.className = value;
       } else if (key === "dataset") {
+        // Set data-* attributes
         for (const [dataKey, dataValue] of Object.entries(value)) {
           el.dataset[dataKey] = dataValue;
         }
       } else if (key in el) {
+        // Set property directly if it exists on the element
         el[key] = value;
       } else {
+        // Fallback to setAttribute for other attributes
         el.setAttribute(key, value);
       }
     }
 
+    // Helper to append a child (string, Node, or array)
     const appendChild = (child) => {
       if (typeof child === "string") {
         el.appendChild(document.createTextNode(child));
@@ -32,6 +43,7 @@ class Creator {
       }
     };
 
+    // Append children (single or array)
     if (Array.isArray(children)) {
       children.forEach(appendChild);
     } else {
@@ -41,6 +53,10 @@ class Creator {
     return el;
   }
 
+  /**
+   * Create and append a loading indicator to the root element.
+   * @param {HTMLElement} root - The parent element to append the loading indicator to.
+   */
   static createLoading(root) {
     const loading = Creator.createElement("div", {
       className: "loading",
@@ -50,7 +66,13 @@ class Creator {
     root.appendChild(loading);
   }
 
+  /**
+   * Create and append the navigation bar to the root element.
+   * Includes a header, hamburger menu button, and navigation items.
+   * @param {HTMLElement} root - The parent element to append the navbar to.
+   */
   static createNavbar(root) {
+    // Header title
     const header = Creator.createElement(
       "h1",
       {
@@ -60,6 +82,7 @@ class Creator {
       "Curriculum Vitae"
     );
 
+    // Hamburger menu label (for mobile)
     const btnLabel = Creator.createElement(
       'label',
       {
@@ -70,6 +93,7 @@ class Creator {
     );
     btnLabel.innerHTML = '<span></span><span></span><span></span>';
 
+    // Hamburger menu checkbox (toggle)
     const button = Creator.createElement(
       'input',
       {
@@ -79,6 +103,7 @@ class Creator {
       }
     );
 
+    // Navigation items list
     const list = Creator.createElement("ul", {
       className: "navbarItems",
       id: "navbarItems",
@@ -90,6 +115,7 @@ class Creator {
       "<li data-class='skills'>Compétences</li>" +
       "<li data-class='project'>Projets</li>";
 
+    // Compose the navbar
     const navbar = Creator.createElement(
       "nav",
       {
@@ -102,7 +128,12 @@ class Creator {
     root.appendChild(navbar);
   }
 
+  /**
+   * Create and append identity cards (personal info, address, contact) to the root element.
+   * @param {HTMLElement} root - The parent element to append the identity cards to.
+   */
   static createIdentityCards(root) {
+    // Card 1: Identity
     const card1 = Creator.createElement(
       "div",
       {
@@ -112,6 +143,7 @@ class Creator {
       "Identité"
     );
 
+    // Card 1 content: Name, photo, job, driving license
     const content1 = Creator.createElement("div", {
       className: "body",
       id: "bodyIdentity1",
@@ -122,6 +154,7 @@ class Creator {
     content1.innerHTML += `<div data-after='Voir le Permis de Conduire'>Véhiculé</div>`;
     card1.appendChild(content1);
 
+    // Card 2: Address
     const card2 = Creator.createElement(
       "div",
       {
@@ -139,6 +172,7 @@ class Creator {
       "<div>67b rue de la Cheneau, 57070, Metz, France</div>";
     card2.appendChild(content2);
 
+    // Card 3: Contact
     const card3 = Creator.createElement(
       "div",
       {
@@ -156,11 +190,17 @@ class Creator {
     content3.innerHTML += "<div><a href='mailto:kuntz.lucas@gmail.com'>kuntz.lucas@gmail.com</a></div>";
     card3.appendChild(content3);
 
+    // Append all identity cards to root
     root.appendChild(card1);
     root.appendChild(card2);
     root.appendChild(card3);
   }
 
+  /**
+   * Create and append professional experience cards to the root element.
+   * Each card represents a job or internship experience.
+   * @param {HTMLElement} root - The parent element to append the professional cards to.
+   */
   static createProfessionalExCards(root) {
     const card1 = Creator.createElement(
       "div",
@@ -168,20 +208,21 @@ class Creator {
         className: "card professional",
         id: "professional1",
       },
-      "1ère expérience : Efluid"
+      "1ère expérience : Sira Multiservices"
     );
 
     const content1 = Creator.createElement("div", {
       className: "body",
       id: "bodyPro1",
     });
-    content1.innerHTML += `<div class='imgLogo'><img src='./assets/pics/efluid_logo.png'></div>`;
-    content1.innerHTML += `<div role='titre'>Développeur JAVA</div>`;
+    content1.innerHTML += `<div class='imgLogo'><span>Sira Multiservices</span></div>`;
+    content1.innerHTML += `<div role='titre'>Développeur PHP</div>`;
     content1.innerHTML += `<hr/>`;
-    content1.innerHTML += `<div role='periode'>Janvier 2017 (Début intérim) <br/>Juin 2018 (Fin intérim)</div>`;
+    content1.innerHTML += `<div role='periode'>Avril 2013 (Début stage DUT) - Juin 2013 (Fin stage DUT)</div>`;
     content1.innerHTML += `<hr/>`;
     content1.innerHTML += `<ul role='missions'>
-      <li role='mission'>Développement & mise en place du système d'intégration métier en Java.</li>
+      <li role='mission'>Nettoyage du code de l'application DevisLux en Pear PHP.</li>
+      <li role='mission'>Amélioration de l'application pour un meilleur référencement.</li>
     </ul>`;
     card1.appendChild(content1);
 
@@ -191,53 +232,133 @@ class Creator {
         className: "card professional",
         id: "professional2",
       },
-      "2ème expérience : CAC"
+      "2ème expérience : OGMI"
     );
 
     const content2 = Creator.createElement("div", {
       className: "body",
-      id: "bodyPro2",
+      id: "bodyPro1",
     });
-    content2.innerHTML += `<div class='imgLogo'><img src='./assets/pics/cac_histo.png'></div>`;
-    content2.innerHTML += `<div role='titre'>Technicien informatique</div>`;
+    content2.innerHTML += `<div class='imgLogo'><img src='./assets/pics/OGMI.jpg'></div>`;
+    content2.innerHTML += `<div role='titre'>Développeur VB .Net</div>`;
     content2.innerHTML += `<hr/>`;
-    content2.innerHTML += `<div role='periode'>Août 2018 (Début CDI) <br/>Novembre 2019 (Fin CDI)</div>`;
+    content2.innerHTML += `<div role='periode'>Mai 2015  (Début stage Licence Pro) - Septembre 2015 (Fin stage Licence Pro)</div>`;
     content2.innerHTML += `<hr/>`;
     content2.innerHTML += `<ul role='missions'>
-      <li role='mission'>Développement et maintien de la solution de gestion commerciale en Pascal Delphi.</li>
+      <li role='mission'>Développement d'un applicatif web de consultation des données d'une base de données PostgreSQL.</li>
+      <li role='mission'>Collaboration avec les développeurs de l'application VB Cyrus pour une synchronisation entre les deux applicatifs.</li>
     </ul>`;
     card2.appendChild(content2);
-
+    
     const card3 = Creator.createElement(
       "div",
       {
         className: "card professional",
         id: "professional3",
       },
-      "3ème expérience : Happiso"
+      "3ème expérience : Efluid"
     );
 
     const content3 = Creator.createElement("div", {
       className: "body",
       id: "bodyPro3",
     });
-    content3.innerHTML += `<div class='imgLogo'><img src='./assets/pics/happiso_logo.jpg'></div>`;
-    content3.innerHTML += `<div role='titre'>Développeur Php</div>`;
+    content3.innerHTML += `<div class='imgLogo'><img src='./assets/pics/efluid_logo.png'></div>`;
+    content3.innerHTML += `<div role='titre'>Développeur JAVA</div>`;
     content3.innerHTML += `<hr/>`;
-    content3.innerHTML += `<div role='periode'>Janvier 2020 (Début intérim) <br/>Mai 2020 (Fin intérim/Début CDI) <br/>Janvier 2023 (Fin CDI)</div>`;
+    content3.innerHTML += `<div role='periode'>Janvier 2017 (Début intérim) <br/>Juin 2018 (Fin intérim)</div>`;
     content3.innerHTML += `<hr/>`;
     content3.innerHTML += `<ul role='missions'>
+      <li role='mission'>Développement & mise en place du système d'intégration métier en Java.</li>
+    </ul>`;
+    card3.appendChild(content3);
+
+    const card4 = Creator.createElement(
+      "div",
+      {
+        className: "card professional",
+        id: "professional4",
+      },
+      "4ème expérience : CAC"
+    );
+
+    const content4 = Creator.createElement("div", {
+      className: "body",
+      id: "bodyPro4",
+    });
+    content4.innerHTML += `<div class='imgLogo'><img src='./assets/pics/cac_histo.png'></div>`;
+    content4.innerHTML += `<div role='titre'>Technicien informatique</div>`;
+    content4.innerHTML += `<hr/>`;
+    content4.innerHTML += `<div role='periode'>Août 2018 (Début CDI) <br/>Novembre 2019 (Fin CDI)</div>`;
+    content4.innerHTML += `<hr/>`;
+    content4.innerHTML += `<ul role='missions'>
+      <li role='mission'>Développement et maintien de la solution de gestion commerciale en Pascal Delphi.</li>
+    </ul>`;
+    card4.appendChild(content4);
+
+    const card5 = Creator.createElement(
+      "div",
+      {
+        className: "card professional",
+        id: "professional5",
+      },
+      "5ème expérience : Happiso"
+    );
+
+    const content5 = Creator.createElement("div", {
+      className: "body",
+      id: "bodyPro6",
+    });
+    content5.innerHTML += `<div class='imgLogo'><img src='./assets/pics/happiso_logo.jpg'></div>`;
+    content5.innerHTML += `<div role='titre'>Développeur Php</div>`;
+    content5.innerHTML += `<hr/>`;
+    content5.innerHTML += `<div role='periode'>Janvier 2020 (Début intérim) <br/>Mai 2020 (Fin intérim/Début CDI) <br/>Janvier 2023 (Fin CDI)</div>`;
+    content5.innerHTML += `<hr/>`;
+    content5.innerHTML += `<ul role='missions'>
       <li role='mission'>Développement & maintien d'une solution de gestion RH en Cakephp, Javascript & Less.</li>
       <li role='mission'>Transformation de la solution Cakephp en solution Typescript React.</li>
       <li role='mission'>Support téléphonique aux utilisateurs.</li>
     </ul>`;
-    card3.appendChild(content3);
+    card5.appendChild(content5);
 
+    const card6 = Creator.createElement(
+      "div",
+      {
+        className: "card professional",
+        id: "professional6",
+      },
+      "6ème expérience : Profluens"
+    );
+
+    const content6 = Creator.createElement("div", {
+      className: "body",
+      id: "bodyPro6",
+    });
+    content6.innerHTML += `<div class='imgLogo'><img src='./assets/pics/profluens.jpg'></div>`;
+    content6.innerHTML += `<div role='titre'>Développeur Web</div>`;
+    content6.innerHTML += `<hr/>`;
+    content6.innerHTML += `<div role='periode'>Mai 2025 (Début stage) - Juillet 2025 (Fin stage)</div>`;
+    content6.innerHTML += `<hr/>`;
+    content6.innerHTML += `<ul role='missions'>
+      <li role='mission'>Développement d'une représentation graphique sous forme d'onde sonore pour le réseau social Needle.</li>
+      <li role='mission'>Développement de marqueurs sur cette représentation pour indiquer des modulations importantes.</li>
+    </ul>`;
+    card6.appendChild(content6);
+
+    // Append all professional experience cards to root in reverse order (latest first)
+    root.appendChild(card6);
+    root.appendChild(card5);
+    root.appendChild(card4);
     root.appendChild(card3);
     root.appendChild(card2);
     root.appendChild(card1);
   }
 
+  /**
+   * Create and append education/formation cards to the root element.
+   * Each card represents a diploma or certification.
+   * @param {HTMLElement} root - The parent element to append the formation cards to.
+   */
   static createFormationsCards(root) {
     const card1 = Creator.createElement(
       "div",
@@ -255,10 +376,8 @@ class Creator {
     content1.innerHTML += `<div class='imgLogo'><img src='./assets/pics/Logo_Université_de_Lorraine.svg'></div>`;
     content1.innerHTML += `<div role='description'>Diplôme Universitaire en Technologie</div>`;
     content1.innerHTML += `<hr>`;
-    content1.innerHTML += `<div role='periode'>09/2011 (Début formation) <br/>07/2014 (Fin formation)</div>`;
+    content1.innerHTML += `<div role='periode'>Septembre 2011 <br/>Juillet 2014</div>`;
     content1.innerHTML += `<div role='location'>Institut Universitaire en Technologie (57000)</div>`;
-    content1.innerHTML += `<hr>`;
-    content1.innerHTML += `<div role='events'>Quatre semestres avec de nombreux projets informatiques et non informatiques</div>`;
     content1.innerHTML += `<hr>`;
     content1.innerHTML += `<div role='internship'>Stage d'Avril 2013 à Juin 2013 chez Sira Multiservices (57050)</div>`;
     card1.appendChild(content1);
@@ -279,10 +398,8 @@ class Creator {
     content2.innerHTML += `<div class='imgLogo'><img src='./assets/pics/Logo_Université_de_Lorraine.svg'></div>`;
     content2.innerHTML += `<div role='description'>Licence Professionelle en Web & E-Commerce</div>`;
     content2.innerHTML += `<hr>`;
-    content2.innerHTML += `<div role='periode'>09/2014 (Début formation) <br/>09/2015 (Fin formation)</div>`;
+    content2.innerHTML += `<div role='periode'>Septembre 2014<br/>Septembre 2015</div>`;
     content2.innerHTML += `<div role='location'>Institut Universitaire en Technologie de Metz (57000)</div>`;
-    content2.innerHTML += `<hr>`;
-    content2.innerHTML += `<div role='events'>Deux semestres avec de nombreux projets informatiques</div>`;
     content2.innerHTML += `<hr>`;
     content2.innerHTML += `<div role='internship'>Stage de Mai 2015 à Septembre 2015 chez OGMI (54000)</div>`;
     card2.appendChild(content2);
@@ -303,19 +420,23 @@ class Creator {
     content3.innerHTML += `<div class='imgLogo'><img src='./assets/pics/Logo-Afpa.png'></div>`;
     content3.innerHTML += `<div role='description'>Titre Professionel Concepteur Développeur d'Applications</div>`;
     content3.innerHTML += `<hr>`;
-    content3.innerHTML += `<div role='periode'>09/2024 (Début formation) <br/>07/2025 (Fin formation)</div>`;
+    content3.innerHTML += `<div role='periode'>Septembre 2024<br/>Juillet 2025</div>`;
     content3.innerHTML += `<div role='location'>Centre AFPA de Pompey (54390)</div>`;
-    content3.innerHTML += `<hr>`;
-    content3.innerHTML += `<div role='events'>Huit mois avec septs évaluations en cours de formation (ECF)</div>`;
     content3.innerHTML += `<hr>`;
     content3.innerHTML += `<div role='internship'>Stage de Mai 2025 à Juillet 2025 chez Profluens SAS</div>`;
     card3.appendChild(content3);
 
+    // Append all formation cards to root in reverse order (latest first)
     root.appendChild(card3);
     root.appendChild(card2);
     root.appendChild(card1);
   }
 
+  /**
+   * Create and append skills cards to the root element.
+   * Each card represents a category of skills (languages, frameworks, tools, etc.).
+   * @param {HTMLElement} root - The parent element to append the skills cards to.
+   */
   static createSkillsCards(root) {
     const card1 = Creator.createElement(
       "div",
@@ -502,6 +623,7 @@ class Creator {
     </ul>`;
     card7.appendChild(content7);
 
+    // Append all skills cards to root
     root.appendChild(card1);
     root.appendChild(card2);
     root.appendChild(card3);
@@ -511,6 +633,11 @@ class Creator {
     root.appendChild(card7);
   }
 
+  /**
+   * Create and append project cards to the root element.
+   * Each card represents a project, with repository links, description, and technologies used.
+   * @param {HTMLElement} root - The parent element to append the project cards to.
+   */
   static createProjectsCards(root) {
     const card1 = Creator.createElement(
       "div",
@@ -766,7 +893,64 @@ class Creator {
     + "<li>MySQL - SGBDR</li>"
     + "</ul>";
     card9.appendChild(content9);
+    
+    const card10 = Creator.createElement(
+      "div",
+      {
+        className: "card project",
+        id: "project9",
+      },
+      "cv"
+    );
 
+    const content10 = Creator.createElement(
+      'div',
+      {
+        className: 'body',
+        id: 'bodyProject10'
+      }
+    );
+    content10.innerHTML += "<div role='repository'><a target='_blank' href='https://github.com/Fhurai/_cv'>Repository</a></div>";
+    content10.innerHTML += "<hr/>";
+    content10.innerHTML += "<div role='access'><a target='blank' href='https://fhurai.github.io/_cv/'>Access</a></div>";
+    content10.innerHTML += "<hr/>";
+    content10.innerHTML += "<div role='description'>CV en ligne.</div>";
+    content10.innerHTML += "<hr/>";
+    content10.innerHTML += "<ul role='technologies'>"
+    + "<li>HTML/CSS - Balises web</li>"
+    + "<li>Javascript - Comportement client web</li>"
+    + "</ul>";
+    card10.appendChild(content10);
+
+    const card11 = Creator.createElement(
+      "div",
+      {
+        className: "card project",
+        id: "project11",
+      },
+      "exercices (personnel)"
+    );
+
+    const content11 = Creator.createElement(
+      'div',
+      {
+        className: 'body',
+        id: 'bodyProject11'
+      }
+    );
+    content11.innerHTML += "<div role='repository'><a target='_blank' href='https://github.com/Fhurai/_exercices'>Repository</a></div>";
+    content11.innerHTML += "<hr/>";
+    content11.innerHTML += "<div role='access'><a target='blank' href='https://fhurai.github.io/_exercices/'>Access</a></div>";
+    content11.innerHTML += "<hr/>";
+    content11.innerHTML += "<div role='description'>Différents exercices sur des composants et des jeux en ligne.</div>";
+    content11.innerHTML += "<hr/>";
+    content11.innerHTML += "<ul role='technologies'>"
+    + "<li>HTML/CSS - Balises web</li>"
+    + "<li>Javascript - Comportement client web</li>"
+    + "</ul>";
+    card11.appendChild(content11);
+
+    // Append all project cards to root
     root.appendChild(card1);
     root.appendChild(card2);
     root.appendChild(card3);
@@ -776,20 +960,29 @@ class Creator {
     root.appendChild(card7);
     root.appendChild(card8);
     root.appendChild(card9);
+    root.appendChild(card10);
+    root.appendChild(card11);
   }
 
+  /**
+   * Create and append all cards (identity, professional, formation, skills, projects) to the root element.
+   * @param {HTMLElement} root - The parent element to append all cards to.
+   */
   static createCards(root) {
+    // Container for all cards
     const cards = Creator.createElement("div", {
       className: "cards",
       id: "cards",
     });
 
+    // Add each section of cards
     Creator.createIdentityCards(cards);
     Creator.createProfessionalExCards(cards);
     Creator.createFormationsCards(cards);
     Creator.createSkillsCards(cards);
     Creator.createProjectsCards(cards);
 
+    // Append the cards container to the root
     root.appendChild(cards);
   }
 }
