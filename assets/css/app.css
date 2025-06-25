@@ -208,6 +208,12 @@ nav ul li:hover {
   height: auto;
   width: 240px;
 }
+.cards .card .body .imgLogo span {
+  height: auto;
+  width: 240px;
+  font-size: 24px;
+  margin: 1rem;
+}
 .cards .card .body ul {
   list-style: none;
   padding-inline: 0;
