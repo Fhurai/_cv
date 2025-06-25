@@ -806,7 +806,7 @@ class Creator {
     + "<li><a target='_blank' href='https://github.com/Fhurai/_CommissionExplorerAPI'>Repository API</a></li>"
     + "</ul>";
     content6.innerHTML += "<hr/>";
-    content6.innerHTML += "<div role='access'><a target='blank' href='https://fhurai.github.io/_exercices/'>Access</a></div>";
+    content6.innerHTML += "<div role='access'><a target='blank' href='https://fhurai.github.io/_CommissionExplorer/'>Access</a></div>";
     content6.innerHTML += "<hr/>";
     content6.innerHTML += "<div role='description'>Applicatif de gallerie de commissions, permettant de visionner l'ensemble des commissions obtenues</div>";
     content6.innerHTML += "<hr/>";
