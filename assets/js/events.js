@@ -1,8 +1,10 @@
 // Global variable to keep track of the currently selected card type
-var cardType = "identity";
+var cardType = "professional";
+var token = "";
 
 // Wait for the DOM to be fully loaded before running the main logic
 document.addEventListener("DOMContentLoaded", function () {
+  getAndUseAccessToken();
   // Create and display a loading indicator
   Creator.createLoading(document.getElementById("content").parentElement);
 
@@ -31,6 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
  * shows the relevant cards, and scrolls to the top of the cards section.
  */
 function clickCards() {
+  if(token === "THVjYXNLdW50ejU3MDcwTWV0eg=="){
+    cardType = "identity";
+  }
   // Get all navigation buttons as an array
   const buttons = Array.from(document.querySelectorAll("nav ul li"));
 
@@ -92,4 +97,20 @@ function scrollToTopOfCardsWithOffset() {
     top: rect.top + scrollTop + offset,
     behavior: "smooth",
   });
+}
+
+function getAndUseAccessToken(){
+  const params = new URLSearchParams(window.location.search);
+  if(params.size === 1 && params.get("access_token") !== ""){
+    const param = params.get("access_token");
+    token = base64Encode(param);
+  }
+}
+
+function base64Encode(str) {
+  return btoa(unescape(encodeURIComponent(str)));
+}
+
+function base64Decode(encoded) {
+  return decodeURIComponent(escape(atob(encoded)));
 }

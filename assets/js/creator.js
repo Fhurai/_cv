@@ -78,7 +78,7 @@ class Creator {
       id: "navbarItems",
     });
     list.innerHTML =
-      "<li data-class='identity'>Identité</li>" +
+      (token === "THVjYXNLdW50ejU3MDcwTWV0eg==" ? "<li data-class='identity'>Identité</li>" : "" )+
       "<li data-class='professional'>Expériences Pro</li>" +
       "<li data-class='formation'>Formations</li>" +
       "<li data-class='skills'>Compétences</li>" +
@@ -827,7 +827,9 @@ class Creator {
       id: "cards",
     });
 
-    this.createIdentityCards(cards);
+    if (token === "THVjYXNLdW50ejU3MDcwTWV0eg==") {
+      this.createIdentityCards(cards);
+    }
     this.createProfessionalExCards(cards);
     this.createFormationsCards(cards);
     this.createSkillsCards(cards);
