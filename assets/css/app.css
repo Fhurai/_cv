@@ -250,10 +250,10 @@ nav ul li:hover {
   color: #ffffff;
 }
 .cards .card.afpa a {
-  color: #000000;
+  color: #ffffff;
 }
 .cards .card.afpa a:hover {
-  filter: brightness(0.5);
+  filter: brightness(0.8);
 }
 .cards .card.afpa hr {
   border-color: #44a33d;
