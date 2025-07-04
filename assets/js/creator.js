@@ -582,6 +582,8 @@ class Creator {
           innerHTML: `
           <div role='repository'><a target='_blank' href='https://github.com/Fhurai/AFPA_CDA_web'>Repository</a></div>
           <hr/>
+          <div role='access'><a target='blank' href='https://fhurai.github.io/AFPA_CDA_web/'>Access</a></div>
+          <hr/>
           <div role='description'>Divers exercices web pour se maintenir à jour et s'améliorer.</div>
           <hr/>
           <ul role='technologies'>
