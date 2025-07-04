@@ -149,11 +149,11 @@ nav ul li:hover {
 .cards .card {
   background-color: var(--color-darkgrey);
   border-radius: 0.5rem;
-  padding: 0.5rem;
   margin: 0.25rem;
   width: 15rem;
   box-shadow: 0.5rem 0.5rem 0.5rem black;
   font-size: larger;
+  text-align: center;
   display: none;
 }
 .cards .card.visible {
@@ -161,18 +161,26 @@ nav ul li:hover {
 }
 .cards .card .body {
   border-top: 1px solid var(--color-black);
-  margin: 0.5rem 0 0 0;
-  padding: 0.5rem 0 0 0;
+  border-radius: 0 0 0.5rem 0.5rem;
+  margin-top: 0.5rem;
   line-height: 1.15rem;
   font-size: medium;
   text-align: center;
 }
+.cards .card .body > * {
+  padding: 0.5rem;
+}
 .cards .card .body div:not(.imgContainer) {
   text-align: left;
+}
+.cards .card .body div[role="internship"] {
+  border-radius: 0 0 0.5rem 0.5rem;
 }
 .cards .card .body hr {
   border: unset;
   border-top: 1px solid var(--color-black);
+  margin: 0;
+  padding: 0;
 }
 .cards .card .body .imgContainer {
   display: flex;
@@ -198,30 +206,36 @@ nav ul li:hover {
   align-items: center;
   /* centers vertically */
   height: auto;
-  width: 240px;
-  border: 1px solid var(--color-lightgrey);
-  /* optional, just to see the container */
+  padding: unset;
   overflow: hidden;
-  margin: 0.5rem 0;
 }
 .cards .card .body .imgLogo img {
   height: auto;
-  width: 240px;
+  width: 100%;
 }
 .cards .card .body .imgLogo span {
   height: auto;
-  width: 240px;
+  width: 100%;
   font-size: 24px;
   margin: 1rem;
+}
+.cards .card .body div[role='titre'] {
+  border-top: 1px solid #000000;
 }
 .cards .card .body ul {
   list-style: none;
   padding-inline: 0;
   margin: 0;
+  padding: 0.5rem;
+}
+.cards .card .body ul:last-child {
+  border-radius: 0 0 0.5rem 0.5rem;
 }
 .cards .card .body ul li {
-  margin: 0.5rem 0;
   text-align: left;
+}
+.cards .card .body ul li:not(:first-child) {
+  margin: 0.5rem 0 0 0;
 }
 .cards .card .body a {
   text-decoration: unset;
@@ -230,4 +244,104 @@ nav ul li:hover {
 }
 .cards .card .body a:hover {
   filter: brightness(0.75);
+}
+.cards .card.afpa {
+  background-color: #44a33d;
+  color: #ffffff;
+}
+.cards .card.afpa a {
+  color: #000000;
+}
+.cards .card.afpa a:hover {
+  filter: brightness(0.5);
+}
+.cards .card.afpa hr {
+  border-color: #ffffff;
+}
+.cards .card.afpa .body {
+  background-color: #ffffff;
+  color: #000000;
+}
+.cards .card.afpa .body .imgLogo {
+  border-color: #ffffff;
+}
+.cards .card.afpa div[role="label"],
+.cards .card.afpa div[role="titre"],
+.cards .card.afpa div[role="repository"],
+.cards .card.afpa ul[role="repository"] {
+  background-color: #87bb34;
+}
+.cards .card.afpa ul[role="missions"],
+.cards .card.afpa div[role="internship"],
+.cards .card.afpa ul[role="technologies"] {
+  background-color: #44a33d;
+  color: #ffffff;
+}
+.cards .card.ul {
+  background-color: #ffef65;
+  color: #000000;
+}
+.cards .card.ul a {
+  color: #000000;
+}
+.cards .card.ul a:hover {
+  filter: brightness(0.5);
+}
+.cards .card.ul hr {
+  border-color: #ffffff;
+}
+.cards .card.ul .body {
+  background-color: #ffffff;
+  color: #000000;
+}
+.cards .card.ul .body .imgLogo {
+  border-color: #ffffff;
+}
+.cards .card.ul div[role="label"],
+.cards .card.ul div[role="titre"],
+.cards .card.ul div[role="repository"],
+.cards .card.ul ul[role="repository"] {
+  background-color: #000000;
+  color: #ffffff;
+}
+.cards .card.ul ul[role="missions"],
+.cards .card.ul div[role="internship"],
+.cards .card.ul ul[role="technologies"] {
+  background-color: #ffef65;
+}
+.cards .card.asxiv {
+  background-color: #000025;
+  color: #5fb3ce;
+}
+.cards .card.asxiv a {
+  color: #5fb3ce;
+}
+.cards .card.asxiv a:hover {
+  filter: brightness(0.5);
+}
+.cards .card.asxiv hr {
+  border-color: #0000ff;
+}
+.cards .card.asxiv .body {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+.cards .card.asxiv .body .imgLogo {
+  border-color: #ffffff;
+}
+.cards .card.asxiv div[role='access'] {
+  background-color: #000025;
+}
+.cards .card.asxiv div[role="label"],
+.cards .card.asxiv div[role="titre"],
+.cards .card.asxiv div[role="repository"],
+.cards .card.asxiv ul[role="repository"] {
+  background-color: #000099;
+}
+.cards .card.asxiv ul[role="missions"],
+.cards .card.asxiv div[role="internship"],
+.cards .card.asxiv ul[role="technologies"] {
+  background-color: #0000ff;
+  color: #5fb3ce;
 }
