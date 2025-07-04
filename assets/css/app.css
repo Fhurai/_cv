@@ -208,6 +208,7 @@ nav ul li:hover {
   height: auto;
   padding: unset;
   overflow: hidden;
+  background-color: #ffffff;
 }
 .cards .card .body .imgLogo img {
   height: auto;
