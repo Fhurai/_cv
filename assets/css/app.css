@@ -246,7 +246,7 @@ nav ul li:hover {
   filter: brightness(0.75);
 }
 .cards .card.afpa {
-  background-color: #44a33d;
+  background-color: #87bb34;
   color: #ffffff;
 }
 .cards .card.afpa a {
@@ -256,7 +256,7 @@ nav ul li:hover {
   filter: brightness(0.5);
 }
 .cards .card.afpa hr {
-  border-color: #ffffff;
+  border-color: #44a33d;
 }
 .cards .card.afpa .body {
   background-color: #ffffff;
@@ -265,11 +265,15 @@ nav ul li:hover {
 .cards .card.afpa .body .imgLogo {
   border-color: #ffffff;
 }
+.cards .card.afpa div[role='access'] {
+  background-color: #87bb34;
+}
 .cards .card.afpa div[role="label"],
 .cards .card.afpa div[role="titre"],
 .cards .card.afpa div[role="repository"],
 .cards .card.afpa ul[role="repository"] {
-  background-color: #87bb34;
+  background-color: #44a33d;
+  color: #ffffff;
 }
 .cards .card.afpa ul[role="missions"],
 .cards .card.afpa div[role="internship"],
