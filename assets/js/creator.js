@@ -201,7 +201,7 @@ class Creator {
         contentData: {
           id: "bodyPro2",
           innerHTML: `
-          <div class='imgLogo'><img src='./assets/pics/OGMI.jpg'></div>
+          <div class='imgLogo'><img src='./assets/pics/ogmi_cyrus.jpg'></div>
           <div role='titre'>Développeur VB .Net</div>
           <hr/>
           <div role='periode'>Mai 2015 (Début stage Licence Pro) <br/>Septembre 2015 (Fin stage Licence Pro)</div>
@@ -284,7 +284,7 @@ class Creator {
         contentData: {
           id: "bodyPro6",
           innerHTML: `
-          <div class='imgLogo'><img src='./assets/pics/profluens.jpg'></div>
+          <div class='imgLogo'><img src='./assets/pics/proflu.jpg'></div>
           <div role='titre'>Développeur Web</div>
           <hr/>
           <div role='periode'>Mai 2025 (Début stage) - Juillet 2025 (Fin stage)</div>
@@ -315,7 +315,7 @@ class Creator {
         contentData: {
           id: "bodyFormation1",
           innerHTML: `
-          <div class='imgLogo'><img src='./assets/pics/Logo_Université_de_Lorraine.svg'></div>
+          <div class='imgLogo'><img src='./assets/pics/ul.svg'></div>
           <div role='label'>Diplôme Universitaire en Technologie</div>
           <hr>
           <div role='periode'>Septembre 2011 (Début formation) <br/>Juillet 2014 (Fin formation)</div>
@@ -334,7 +334,7 @@ class Creator {
         contentData: {
           id: "bodyFormation2",
           innerHTML: `
-          <div class='imgLogo'><img src='./assets/pics/Logo_Université_de_Lorraine.svg'></div>
+          <div class='imgLogo'><img src='./assets/pics/ul.svg'></div>
           <div role='label'>Licence Professionelle en Web & E-Commerce</div>
           <hr>
           <div role='periode'>Septembre 2014 (Début formation) <br/>Septembre 2015 (Fin formation)</div>
@@ -353,7 +353,7 @@ class Creator {
         contentData: {
           id: "bodyFormation3",
           innerHTML: `
-          <div class='imgLogo'><img src='./assets/pics/Logo-Afpa.png'></div>
+          <div class='imgLogo'><img src='./assets/pics/afpa.png'></div>
           <div role='label'>Titre Professionel Concepteur Développeur d'Applications</div>
           <hr>
           <div role='periode'>Septembre 2024 (Début formation) <br/>Juillet 2025 (Fin formation)</div>
