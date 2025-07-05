@@ -717,24 +717,6 @@ class Creator {
         `,
         },
       },
-      // {
-      //   cardData: { className: "project", id: "project8", title: "Comex" },
-      //   contentData: {
-      //     id: "bodyProject8",
-      //     innerHTML: `
-      //     <div role='repository'><a target='_blank' href='https://github.com/Fhurai/comex'>Repository</a></div>
-      //     <hr/>
-      //     <div role='description'>Projet Typescript react d'apprentissage avec utilisation de l'API derrière CommissionXplorer</div>
-      //     <hr/>
-      //     <ul role='technologies'>
-      //       <li>Typescript - Framework JS</li>
-      //       <li>HTML/CSS - Balises web</li>
-      //       <li>Javascript - Comportement client web</li>
-      //       <li>Less Preprocessor</li>
-      //     </ul>
-      //   `,
-      //   },
-      // },
       {
         cardData: { className: "project", id: "project9", title: "FanBk" },
         contentData: {
