@@ -1,1 +1,0 @@
-npx terser assets/js/creator.js assets/js/events.js -o assets/js/bundle.min.js -c -m
