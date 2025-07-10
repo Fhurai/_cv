@@ -161,6 +161,36 @@ class Creator {
         `,
         },
       },
+      {
+        cardData:{
+          className: "identity",
+          id: "identity4",
+          title: "Cartes officielles"
+        },
+        contentData: {
+          id: "bodyIdentity4",
+          innerHTML: `
+          <div><a target="_blank" href="./assets/docs/CarteNationaleIdentite.pdf">Carte Nationale d'Identité</a></div>
+          <div><a target="_blank" href="./assets/docs/PermisDeConduire.pdf">Permis de conduire</a></div>
+        `,
+        }
+      },
+      {
+        cardData:{
+          className: "identity",
+          id: "identity5",
+          title: "Diplômes / Attestation / Certificat"
+        },
+        contentData: {
+          id: "bodyIdentity5",
+          innerHTML: `
+          <div><a target="_blank" href="./assets/docs/DiplomeUniversitaireDeTechnologie.pdf">Diplôme Universitaire De Technologie</a></div>
+          <div><a target="_blank" href="./assets/docs/DiplomeLicenceProfesssionnelle.pdf">Diplôme de Licence Professsionnelle</a></div>
+          <div><a target="_blank" href="./assets/docs/LKU - SecNum attestation.jpg">Attestation Sécurité Numérique ANSSI</a></div>
+          <div><a target="_blank" href="./assets/docs/lucas_kuntz_dd3bbd64035fdfb94d07155358084e40.pdf">Certification TOSA Javascript</a></div>
+        `,
+        }
+      }
     ];
 
     identityCards.forEach((cardInfo) => {
