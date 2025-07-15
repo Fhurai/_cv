@@ -84,7 +84,7 @@
         }
       }
 
-      div[role='titre']{
+      div[role="titre"] {
         border-top: 1px solid #000000;
       }
 
@@ -114,6 +114,16 @@
 
         &:hover {
           filter: brightness(0.75);
+        }
+
+        &::before {
+          content: "link";
+          font-family: "Material Symbols Outlined";
+          font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+          font-size: 24px;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 1rem;
         }
       }
     }

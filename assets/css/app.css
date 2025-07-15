@@ -220,7 +220,7 @@ nav ul li:hover {
   font-size: 24px;
   margin: 1rem;
 }
-.cards .card .body div[role='titre'] {
+.cards .card .body div[role="titre"] {
   border-top: 1px solid #000000;
 }
 .cards .card .body ul {
@@ -245,6 +245,15 @@ nav ul li:hover {
 }
 .cards .card .body a:hover {
   filter: brightness(0.75);
+}
+.cards .card .body a::before {
+  content: "link";
+  font-family: "Material Symbols Outlined";
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-size: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 1rem;
 }
 .cards .card.afpa {
   background-color: #87bb34;
