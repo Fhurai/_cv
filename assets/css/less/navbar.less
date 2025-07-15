@@ -83,12 +83,12 @@ nav {
       position: absolute;
       background-color: var(--color-black);
       top: 100%;
+      left: 0;
       box-shadow: 0.5rem 0.5rem 0.5rem black;
-      width: 90%;
+      width: 100%;
       z-index: 15;
 
       li {
-        width: 100%;
         border: 1px solid var(--color-black);
         background-color: var(--color-darkgrey);
         font-size: 18px;
@@ -96,6 +96,14 @@ nav {
         &:hover {
           background-color: var(--color-black);
           padding-bottom: 0.5rem;
+        }
+
+        &::after {
+          content: attr(title);
+          display: block;
+          text-align: right;
+          font-style: italic;
+          color: grey;
         }
       }
     }

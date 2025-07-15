@@ -25,6 +25,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Toggle the loading animation off
   document.getElementById("loading").classList.toggle("load");
+
+  const total = Array.from(document.querySelectorAll('.card.professional [role="periode"]'))
+      .map((div) => {
+        return parseInt(
+          div.dataset.diff.substring(0, div.dataset.diff.indexOf(" mois"))
+        );
+      })
+      .reduce((sum, val) => sum + val, 0);
+
+  const years = Math.floor(total / 12);
+  document.querySelector('li[data-class="professional"]').title = `${total} mois / ${years} an${years > 1 ? 's' : ''} & ${total - (years * 12)} mois`;
 });
 
 /**

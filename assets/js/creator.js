@@ -78,11 +78,13 @@ class Creator {
       id: "navbarItems",
     });
     list.innerHTML =
-      (token === "THVjYXNLdW50ejU3MDcwTWV0eg==" ? "<li data-class='identity'>Identité</li>" : "" )+
+      (token === "THVjYXNLdW50ejU3MDcwTWV0eg=="
+        ? "<li data-class='identity'>Identité</li>"
+        : "") +
       "<li data-class='professional'>Expériences Pro</li>" +
-      "<li data-class='formation'>Formations</li>" +
+      "<li data-class='formation' title='BAC +3 / RNCP 6'>Formations</li>" +
       "<li data-class='skills'>Compétences</li>" +
-      "<li data-class='project'>Projets</li>";
+      "<li data-class='project' title='5 Sites accessibles'>Projets</li>";
 
     const navbar = Creator.createElement(
       "nav",
@@ -162,10 +164,10 @@ class Creator {
         },
       },
       {
-        cardData:{
+        cardData: {
           className: "identity",
           id: "identity4",
-          title: "Cartes officielles"
+          title: "Cartes officielles",
         },
         contentData: {
           id: "bodyIdentity4",
@@ -173,13 +175,13 @@ class Creator {
           <div><a target="_blank" href="./assets/docs/CarteNationaleIdentite.pdf">Carte Nationale d'Identité</a></div>
           <div><a target="_blank" href="./assets/docs/PermisDeConduire.pdf">Permis de conduire</a></div>
         `,
-        }
+        },
       },
       {
-        cardData:{
+        cardData: {
           className: "identity",
           id: "identity5",
-          title: "Diplômes / Attestation / Certificat"
+          title: "Diplômes / Attestation / Certificat",
         },
         contentData: {
           id: "bodyIdentity5",
@@ -189,8 +191,8 @@ class Creator {
           <div><a target="_blank" href="./assets/docs/LKU - SecNum attestation.jpg">Attestation Sécurité Numérique ANSSI</a></div>
           <div><a target="_blank" href="./assets/docs/lucas_kuntz_dd3bbd64035fdfb94d07155358084e40.pdf">Certification TOSA Javascript</a></div>
         `,
-        }
-      }
+        },
+      },
     ];
 
     identityCards.forEach((cardInfo) => {
@@ -213,7 +215,7 @@ class Creator {
           <div class='imgLogo'><span>Sira Multiservices</span></div>
           <div role='titre'>Développeur PHP</div>
           <hr/>
-          <div role='periode'>Avril 2013 (Début stage DUT) <br/>Juin 2013 (Fin stage DUT)</div>
+          <div role='periode' data-diff='2 mois'>Avril 2013 (Début stage DUT) <br/>Juin 2013 (Fin stage DUT)</div>
           <hr/>
           <ul role='missions'>
             <li role='mission'>Nettoyage du code de l'application DevisLux en Pear PHP.</li>
@@ -234,7 +236,7 @@ class Creator {
           <div class='imgLogo'><img src='./assets/pics/ogmi_cyrus.jpg'></div>
           <div role='titre'>Développeur VB .Net</div>
           <hr/>
-          <div role='periode'>Mai 2015 (Début stage Licence Pro) <br/>Septembre 2015 (Fin stage Licence Pro)</div>
+          <div role='periode' data-diff='4 mois'>Mai 2015 (Début stage Licence Pro) <br/>Septembre 2015 (Fin stage Licence Pro)</div>
           <hr/>
           <ul role='missions'>
             <li role='mission'>Développement d'un applicatif web de consultation des données d'une base de données PostgreSQL.</li>
@@ -255,7 +257,7 @@ class Creator {
           <div class='imgLogo'><img src='./assets/pics/efluid_logo.png'></div>
           <div role='titre'>Développeur JAVA</div>
           <hr/>
-          <div role='periode'>Janvier 2017 (Début intérim) <br/>Juin 2018 (Fin intérim)</div>
+          <div role='periode' data-diff='18 mois'>Janvier 2017 (Début intérim) <br/>Juin 2018 (Fin intérim)</div>
           <hr/>
           <ul role='missions'>
             <li role='mission'>Développement & mise en place du système d'intégration métier en Java.</li>
@@ -275,7 +277,7 @@ class Creator {
           <div class='imgLogo'><img src='./assets/pics/cac_histo.png'></div>
           <div role='titre'>Technicien informatique</div>
           <hr/>
-          <div role='periode'>Août 2018 (Début CDI) <br/>Novembre 2019 (Fin CDI)</div>
+          <div role='periode' data-diff='15 mois'>Août 2018 (Début CDI) <br/>Novembre 2019 (Fin CDI)</div>
           <hr/>
           <ul role='missions'>
             <li role='mission'>Développement et maintien de la solution de gestion commerciale en Pascal Delphi.</li>
@@ -295,7 +297,7 @@ class Creator {
           <div class='imgLogo'><img src='./assets/pics/happiso_logo.jpg'></div>
           <div role='titre'>Développeur Php</div>
           <hr/>
-          <div role='periode'>Janvier 2020 (Début intérim) <br/>Mai 2020 (Fin intérim/Début CDI) <br/>Janvier 2023 (Fin CDI)</div>
+          <div role='periode' data-diff='36 mois'>Janvier 2020 (Début intérim) <br/>Mai 2020 (Fin intérim/Début CDI) <br/>Janvier 2023 (Fin CDI)</div>
           <hr/>
           <ul role='missions'>
             <li role='mission'>Développement & maintien d'une solution de gestion RH en Cakephp, Javascript & Less.</li>
@@ -317,7 +319,7 @@ class Creator {
           <div class='imgLogo'><img src='./assets/pics/proflu.jpg'></div>
           <div role='titre'>Développeur Web</div>
           <hr/>
-          <div role='periode'>Mai 2025 (Début stage) - Juillet 2025 (Fin stage)</div>
+          <div role='periode' data-diff='2 mois'>Mai 2025 (Début stage) - Juillet 2025 (Fin stage)</div>
           <hr/>
           <ul role='missions'>
             <li role='mission'>Développement d'une représentation graphique sous forme d'onde sonore pour le réseau social Needle.</li>

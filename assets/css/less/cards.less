@@ -21,7 +21,7 @@
     }
 
     &:hover {
-      transform: scale(1.10);
+      transform: scale(1.1);
       box-shadow: 0.75rem 0.75rem 1rem rgba(0, 0, 0, 0.6);
       z-index: 1;
       margin-top: 1rem;
@@ -45,6 +45,16 @@
 
       div[role="internship"] {
         border-radius: 0 0 0.5rem 0.5rem;
+      }
+
+      div[role="periode"] {
+        &::after {
+          content: attr(data-diff);
+          display: block;
+          text-align: right;
+          font-style: italic;
+          color: grey;
+        }
       }
 
       hr {
