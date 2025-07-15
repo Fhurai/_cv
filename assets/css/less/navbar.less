@@ -92,6 +92,8 @@ nav {
         border: 1px solid var(--color-black);
         background-color: var(--color-darkgrey);
         font-size: 18px;
+        display: flex;
+        justify-content: space-between;
 
         &:hover {
           background-color: var(--color-black);
@@ -100,7 +102,7 @@ nav {
 
         &::after {
           content: attr(title);
-          display: block;
+          display: inline-block;
           text-align: right;
           font-style: italic;
           color: grey;

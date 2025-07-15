@@ -133,6 +133,8 @@ nav ul li:hover {
     border: 1px solid var(--color-black);
     background-color: var(--color-darkgrey);
     font-size: 18px;
+    display: flex;
+    justify-content: space-between;
   }
   nav ul li:hover {
     background-color: var(--color-black);
@@ -140,7 +142,7 @@ nav ul li:hover {
   }
   nav ul li::after {
     content: attr(title);
-    display: block;
+    display: inline-block;
     text-align: right;
     font-style: italic;
     color: grey;
@@ -296,6 +298,7 @@ nav ul li:hover {
 .cards .card.afpa .body .imgLogo {
   border-color: #ffffff;
 }
+.cards .card.afpa div[role="level"],
 .cards .card.afpa div[role='access'] {
   background-color: #87bb34;
 }
@@ -341,6 +344,7 @@ nav ul li:hover {
 }
 .cards .card.ul ul[role="missions"],
 .cards .card.ul div[role="internship"],
+.cards .card.ul div[role="level"],
 .cards .card.ul ul[role="technologies"] {
   background-color: #ffef65;
 }

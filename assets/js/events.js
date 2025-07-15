@@ -26,16 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Toggle the loading animation off
   document.getElementById("loading").classList.toggle("load");
 
-  const total = Array.from(document.querySelectorAll('.card.professional [role="periode"]'))
-      .map((div) => {
-        return parseInt(
-          div.dataset.diff.substring(0, div.dataset.diff.indexOf(" mois"))
-        );
-      })
-      .reduce((sum, val) => sum + val, 0);
-
-  const years = Math.floor(total / 12);
-  document.querySelector('li[data-class="professional"]').title = `${total} mois / ${years} an${years > 1 ? 's' : ''} & ${total - (years * 12)} mois`;
+  menuDetails();
 });
 
 /**
@@ -44,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
  * shows the relevant cards, and scrolls to the top of the cards section.
  */
 function clickCards() {
-  if(token === "THVjYXNLdW50ejU3MDcwTWV0eg=="){
+  if (token === "THVjYXNLdW50ejU3MDcwTWV0eg==") {
     cardType = "identity";
   }
   // Get all navigation buttons as an array
@@ -110,9 +101,9 @@ function scrollToTopOfCardsWithOffset() {
   });
 }
 
-function getAndUseAccessToken(){
+function getAndUseAccessToken() {
   const params = new URLSearchParams(window.location.search);
-  if(params.size === 1 && params.get("access_token") !== ""){
+  if (params.size === 1 && params.get("access_token") !== "") {
     const param = params.get("access_token");
     token = base64Encode(param);
   }
@@ -124,4 +115,63 @@ function base64Encode(str) {
 
 function base64Decode(encoded) {
   return decodeURIComponent(escape(atob(encoded)));
+}
+
+function menuDetails() {
+  // ********************************************
+  // Professional Experiences
+  // ********************************************
+
+  const totalPro = Array.from(
+    document.querySelectorAll('.card.professional [role="periode"]')
+  )
+    .map((div) => {
+      return parseInt(
+        div.dataset.diff.substring(0, div.dataset.diff.indexOf(" mois"))
+      );
+    })
+    .reduce((sum, val) => sum + val, 0);
+
+  const years = Math.floor(totalPro / 12);
+  document.querySelector('li[data-class="professional"]').title = `${years} an${
+    years > 1 ? "s" : ""
+  } & ${totalPro - years * 12} mois`;
+
+  // ********************************************
+  // Formation
+  // ********************************************
+  const levels = Array.from(
+    document.querySelectorAll('.card.formation div[role="level"]')
+  ).map((div) => div.innerText.trim().toUpperCase());
+
+  const bacLevels = levels
+    .filter((l) => l.startsWith("BAC +"))
+    .sort((a, b) => parseInt(b.split("+")[1]) - parseInt(a.split("+")[1]));
+
+  const others = [...new Set(levels.filter((l) => !l.startsWith("BAC +")))];
+
+  const result = [bacLevels[0], ...others.filter((o) => !bacLevels.includes(o))]
+    .filter(Boolean)
+    .join(" / ");
+
+  document.querySelector('li[data-class="formation"]').title = result;
+
+  // ********************************************
+  // Projects
+  // ********************************************
+
+  const totalAccess = Array.from(
+    document.querySelectorAll(".card.project .body")
+  )
+    .map(
+      (div) =>
+        Array.from(div.children).filter(function (el) {
+          return el.role === "access";
+        }).length
+    )
+    .reduce((sum, val) => sum + val, 0);
+
+  document.querySelector(
+    'li[data-class="project"]'
+  ).title = `${totalAccess} projets accessibles`;
 }

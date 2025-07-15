@@ -82,9 +82,9 @@ class Creator {
         ? "<li data-class='identity'>Identité</li>"
         : "") +
       "<li data-class='professional'>Expériences Pro</li>" +
-      "<li data-class='formation' title='BAC +3 / RNCP 6'>Formations</li>" +
+      "<li data-class='formation'>Formations</li>" +
       "<li data-class='skills'>Compétences</li>" +
-      "<li data-class='project' title='5 Sites accessibles'>Projets</li>";
+      "<li data-class='project'>Projets</li>";
 
     const navbar = Creator.createElement(
       "nav",
@@ -349,6 +349,7 @@ class Creator {
           innerHTML: `
           <div class='imgLogo'><img src='./assets/pics/ul.svg'></div>
           <div role='label'>Diplôme Universitaire en Technologie</div>
+          <div role='level'>Bac +2</div>
           <hr>
           <div role='periode'>Septembre 2011 (Début formation) <br/>Juillet 2014 (Fin formation)</div>
           <div role='location'>Institut Universitaire en Technologie (57000)</div>
@@ -368,6 +369,7 @@ class Creator {
           innerHTML: `
           <div class='imgLogo'><img src='./assets/pics/ul.svg'></div>
           <div role='label'>Licence Professionelle en Web & E-Commerce</div>
+          <div role='level'>Bac +3</div>
           <hr>
           <div role='periode'>Septembre 2014 (Début formation) <br/>Septembre 2015 (Fin formation)</div>
           <div role='location'>Institut Universitaire en Technologie de Metz (57000)</div>
@@ -387,6 +389,7 @@ class Creator {
           innerHTML: `
           <div class='imgLogo'><img src='./assets/pics/afpa.png'></div>
           <div role='label'>Titre Professionel Concepteur Développeur d'Applications</div>
+          <div role='level'>RNCP 6</div>
           <hr>
           <div role='periode'>Septembre 2024 (Début formation) <br/>Juillet 2025 (Fin formation)</div>
           <div role='location'>Centre AFPA de Pompey (54390)</div>
