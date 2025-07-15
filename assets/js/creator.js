@@ -78,7 +78,7 @@ class Creator {
       id: "navbarItems",
     });
     list.innerHTML =
-      (token === "THVjYXNLdW50ejU3MDcwTWV0eg=="
+      (isUnlocked()
         ? "<li data-class='identity'>Identité</li>"
         : "") +
       "<li data-class='professional'>Expériences Pro</li>" +
@@ -844,7 +844,7 @@ class Creator {
       id: "cards",
     });
 
-    if (token === "THVjYXNLdW50ejU3MDcwTWV0eg==") {
+    if (isUnlocked()) {
       this.createIdentityCards(cards);
     }
     this.createProfessionalExCards(cards);

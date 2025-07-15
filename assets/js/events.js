@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
  * shows the relevant cards, and scrolls to the top of the cards section.
  */
 function clickCards() {
-  if (token === "THVjYXNLdW50ejU3MDcwTWV0eg==") {
+  if (isUnlocked()) {
     cardType = "identity";
   }
   // Get all navigation buttons as an array
@@ -115,6 +115,10 @@ function base64Encode(str) {
 
 function base64Decode(encoded) {
   return decodeURIComponent(escape(atob(encoded)));
+}
+
+function isUnlocked(){
+  return token === "THVjYXNLdW50ejU3MDcwTWV0eg==";
 }
 
 function menuDetails() {
