@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "less-plugin-clean-css": "^1.6.0"
+  },
+  "scripts": {
+    "css": "npx lessc assets/css/less/app.less assets/css/app.css && npx lessc --clean-css assets/css/less/app.less assets/css/app.min.css",
+    "build": "npx terser assets/js/creator.js assets/js/events.js -o assets/js/bundle.min.js -c -m",
+    "build-all": "npm run css && npm run build"
+  }
+}
